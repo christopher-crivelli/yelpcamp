@@ -1,0 +1,86 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead">YelpCamp</p>
+            <div class="list-group">
+                <li class="list-group-item active">Info 1</li>
+                <li class="list-group-item">Info 2</li>
+                <li class="list-group-item">Info 3</li>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <div class="thumbnail">
+                <img class="img-responsive" src = "<%= campground.image %>">
+                <div class="caption caption-full">
+                    <h4 class="pull-right">$9.00/night</h4>
+                    
+                    <h4><a><%= campground.name %></a></h4>
+                    
+                    <p> Submitted by 
+                        <a href="#"><%= campground.author.username %></a>
+                    </p>
+                    
+                    <p><%=campground.description %></p>
+                    <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+                        <div class="campground-buttons">
+                            <a class="btn btn-warning" href="/campgrounds/<%=campground._id %>/edit">Edit</a>
+                            <form action="/campgrounds/<%=campground._id%>?_method=delete" method="POST" class="delete-form">
+                                <button class="btn btn-danger"> Delete <%=campground.name%></a>
+                            </form>
+                        </div>
+                    <% }%>
+                </div>
+            </div>
+            
+            <div class="well">
+                <div class="text-right">
+                    <!--/campgrounds/<%=//campground._id%>/comments/new-->
+                    <a class="btn btn-success" id="comment-button" ><i class="glyphicon glyphicon-plus"> </i> Add a Comment</a>
+                    <hr>
+                </div>
+                
+                <div id="comment-box" class="well">
+                    <form action="/campgrounds/<%=campground._id%>/comments" method = "POST">
+                        <div class="form-group">
+                        <input type="text" placeholder="Add comment..." class="form-control" name="comment[text]" >
+                        </div>
+                        <div class="form-group text-right">
+                            <button class="btn btn-s btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <% campground.comments.forEach(function(comment){ %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <strong><%= comment.author.username %></strong>
+                            <span class="pull-right">10 days ago</span>
+                            <p>
+                                <%= comment.text %>
+                            </p>
+                            
+                            <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                                <div class="comments-buttons">
+                                    <a class="btn btn-xs btn-warning"  
+                                    href="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>/edit">
+                                    Edit
+                                    </a> 
+                                    <form class="delete-form" action="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                                        <button class="btn btn-xs btn-danger">Delete</button>
+                                    </form>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <hr>
+                <% }); %>
+            </div>
+            <a href="/campgrounds" >Go Back</a>
+        </div>
+    </div>    
+</div>
+
+<% include ../partials/footer %>
