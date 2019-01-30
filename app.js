@@ -25,7 +25,9 @@ var commentRoutes           = require("./routes/comments"),
 // APP SETUP
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
-mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true });
+// mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true });
+// mongodb://chris:yankees1@ds161175.mlab.com:61175/webdevbootcampyelpcamp
+mongoose.connect("mongodb://chris:yankees1@ds161175.mlab.com:61175/webdevbootcampyelpcamp");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
