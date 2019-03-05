@@ -12,21 +12,16 @@ var express                 = require("express"),
     Campground              = require("./models/campground"),
     User                    = require("./models/user"),
     Comment                 = require("./models/comment"),
-    methodOverride          = require("method-override");
-    
-var commentRoutes           = require("./routes/comments"), 
+    methodOverride          = require("method-override"),
+    commentRoutes           = require("./routes/comments"), 
     campgroundRoutes        = require("./routes/campgrounds"), 
     indexRoutes             = require("./routes/index"),
-    Campground              = require("./models/campground"),
-    User                    = require("./models/user"),
-    Comment                 = require("./models/comment"),
     seedDB                  = require("./seeds");
     
 // APP SETUP
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 // mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true });
-// mongodb://chris:yankees1@ds161175.mlab.com:61175/webdevbootcampyelpcamp
 mongoose.connect("mongodb://chris:yankees1@ds161175.mlab.com:61175/webdevbootcampyelpcamp");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
