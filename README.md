@@ -1,11 +1,17 @@
 # YelpCamp
 Created for the web developer bootcamp by Colt Steele on Udemy.com 
 
-YelpCamp is a web-based application that allows users to publish reviews of campgrounds they have visited. Users can comment on each other's posts. 
+YelpCamp is a web-based application that allows users to publish reviews of campgrounds they have visited. Users can comment on each other's posts. <br> 
+
+This project was built to demonstrate RESTful routes with node.js and express as well as responsive layouts with Bootstrap and templating with EJS. 
+
+### Preview App
+https://evening-beyond-53775.herokuapp.com/
 
 # Built With 
 - Node.js
-- Express 
+- Express
+- EJS
 - MongoDB
 - Mongoose 
 - Passport.js 
