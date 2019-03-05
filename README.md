@@ -1,4 +1,4 @@
-# yelpcamp
+# YelpCamp
 Created for the web developer bootcamp by Colt Steele on Udemy.com 
 
 YelpCamp is a web-based application that allows users to publish reviews of campgrounds they have visited. Users can comment on each other's posts. 
