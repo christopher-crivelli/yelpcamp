@@ -44,6 +44,6 @@ Desired Features:
 [ ] Pagination <br>
 [ ] Ajax calls for populating data, adding comments <br> 
 [ ] User pages <br> 
-[ ] Maps support for displaying campground address
+[ ] Maps support for displaying campground address <br>
 [ ] Ratings in comments by other users and averaging the ratings 
 
