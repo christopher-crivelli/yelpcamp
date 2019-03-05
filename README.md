@@ -43,4 +43,7 @@ Desired Features:
 [] Fuzzy search <br>
 [] Pagination <br>
 [] Ajax calls for populating data, adding comments <br> 
+[] User pages <br> 
+[] Maps support for displaying campground address
+[] Ratings in comments by other users and averaging the ratings 
 
