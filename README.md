@@ -6,7 +6,7 @@ YelpCamp is a web-based application that allows users to publish reviews of camp
 This project was built to demonstrate RESTful routes with node.js and express as well as responsive layouts with Bootstrap and templating with EJS. 
 
 ### Preview App
-https://evening-beyond-53775.herokuapp.com/
+https://yelpcamp-web-bootcamp.herokuapp.com/
 
 # Built With 
 - Node.js
